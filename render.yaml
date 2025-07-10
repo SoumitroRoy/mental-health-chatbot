@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: mental-health-chatbot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false  # Set this manually in the Render dashboard
